@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace problema_6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Calculadora de Juros Compostos");
+            Console.Write("Digite o valor inicial do investimento: R$ "); double valorInicial = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite a taxa de juros mensal (%): ");
+            double taxaJurosMensal = Convert.ToDouble(Console.ReadLine()) / 100;
+            Console.Write("Digite o tempo do investimento em meses: "); double tempoMeses = Convert.ToDouble(Console.ReadLine());
+            
+
+            double valorFinal = valorInicial * Math.Pow(1 + taxaJurosMensal, tempoMeses);
+            Console.WriteLine($"O valor final do investimento será de R$ {valorFinal:F2}");
+
+
+            Console.ReadLine();
+        }
+    }
+}
